@@ -11,6 +11,13 @@
 		4129BE9C2967B33B009982A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BE9B2967B33B009982A5 /* ContentView.swift */; };
 		4129BE9E2967B33B009982A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4129BE9D2967B33B009982A5 /* Assets.xcassets */; };
 		4129BEA12967B33B009982A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4129BEA02967B33B009982A5 /* Preview Assets.xcassets */; };
+		4129BEA92967B36A009982A5 /* Prism in Frameworks */ = {isa = PBXBuildFile; productRef = 4129BEA82967B36A009982A5 /* Prism */; };
+		4129BEAC2967B38F009982A5 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEAB2967B38F009982A5 /* GameView.swift */; };
+		4129BEAF2967B4F8009982A5 /* SingleSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEAE2967B4F8009982A5 /* SingleSquare.swift */; };
+		4129BEB32967BA76009982A5 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB22967BA76009982A5 /* GameViewModel.swift */; };
+		4129BEB62967BE02009982A5 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB52967BE02009982A5 /* Block.swift */; };
+		4129BEB82967C76F009982A5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB72967C76F009982A5 /* Coordinate.swift */; };
+		4129BEBA2967CE59009982A5 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB92967CE59009982A5 /* BlockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,12 @@
 		4129BE9B2967B33B009982A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4129BE9D2967B33B009982A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4129BEA02967B33B009982A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4129BEAB2967B38F009982A5 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		4129BEAE2967B4F8009982A5 /* SingleSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSquare.swift; sourceTree = "<group>"; };
+		4129BEB22967BA76009982A5 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		4129BEB52967BE02009982A5 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		4129BEB72967C76F009982A5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		4129BEB92967CE59009982A5 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4129BEA92967B36A009982A5 /* Prism in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				4129BE992967B33B009982A5 /* Stacker1App.swift */,
-				4129BE9B2967B33B009982A5 /* ContentView.swift */,
+				4129BEB42967BDC8009982A5 /* Models */,
+				4129BEB02967BA61009982A5 /* ViewModel */,
+				4129BEAA2967B381009982A5 /* Views */,
 				4129BE9D2967B33B009982A5 /* Assets.xcassets */,
 				4129BE9F2967B33B009982A5 /* Preview Content */,
 			);
@@ -65,6 +81,42 @@
 				4129BEA02967B33B009982A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4129BEAA2967B381009982A5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4129BE9B2967B33B009982A5 /* ContentView.swift */,
+				4129BEAB2967B38F009982A5 /* GameView.swift */,
+				4129BEAD2967B4EB009982A5 /* GameComponents */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4129BEAD2967B4EB009982A5 /* GameComponents */ = {
+			isa = PBXGroup;
+			children = (
+				4129BEAE2967B4F8009982A5 /* SingleSquare.swift */,
+				4129BEB92967CE59009982A5 /* BlockView.swift */,
+			);
+			path = GameComponents;
+			sourceTree = "<group>";
+		};
+		4129BEB02967BA61009982A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4129BEB22967BA76009982A5 /* GameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4129BEB42967BDC8009982A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4129BEB52967BE02009982A5 /* Block.swift */,
+				4129BEB72967C76F009982A5 /* Coordinate.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +135,9 @@
 			dependencies = (
 			);
 			name = Stacker1;
+			packageProductDependencies = (
+				4129BEA82967B36A009982A5 /* Prism */,
+			);
 			productName = Stacker1;
 			productReference = 4129BE962967B33B009982A5 /* Stacker1.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 4129BE8D2967B33B009982A5;
+			packageReferences = (
+				4129BEA72967B36A009982A5 /* XCRemoteSwiftPackageReference "Prism" */,
+			);
 			productRefGroup = 4129BE972967B33B009982A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +195,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4129BEBA2967CE59009982A5 /* BlockView.swift in Sources */,
+				4129BEB82967C76F009982A5 /* Coordinate.swift in Sources */,
+				4129BEAF2967B4F8009982A5 /* SingleSquare.swift in Sources */,
 				4129BE9C2967B33B009982A5 /* ContentView.swift in Sources */,
+				4129BEAC2967B38F009982A5 /* GameView.swift in Sources */,
+				4129BEB62967BE02009982A5 /* Block.swift in Sources */,
+				4129BEB32967BA76009982A5 /* GameViewModel.swift in Sources */,
 				4129BE9A2967B33B009982A5 /* Stacker1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4129BEA72967B36A009982A5 /* XCRemoteSwiftPackageReference "Prism" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Prism";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4129BEA82967B36A009982A5 /* Prism */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4129BEA72967B36A009982A5 /* XCRemoteSwiftPackageReference "Prism" */;
+			productName = Prism;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4129BE8E2967B33B009982A5 /* Project object */;
 }
