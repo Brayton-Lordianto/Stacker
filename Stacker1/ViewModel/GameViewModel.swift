@@ -15,9 +15,21 @@ class GameViewModel: ObservableObject {
     var prevColor: Color = .yellow
     var prevExtrusion: CGFloat = 1
     var prevCoordinateValue = 10
+    
+    // for the moving block
+    @Published var blockDirection: MoveDirection = .horizontal
+    @Published var blockOffset: CGFloat = 0
+    private var offsetTimer = Timer()
+    
+    init() {
+        offsetTimer = Timer.scheduledTimer(timeInterval: 1/5, target: self, selector: #selector(moveTopBlock), userInfo: nil, repeats: true)
+    }
 }
 
+enum MoveDirection { case vertical; case horizontal; }
+
 extension GameViewModel {
+    
     func addBlock(
     ) {
         // figure out which block to give
@@ -27,7 +39,16 @@ extension GameViewModel {
         
         // update for next block
         prevCoordinateValue += 10
-
+        blockDirection = blockDirection == .horizontal ? .vertical : .horizontal
+        blockOffset = 0
+    }
+    
+    @objc func moveTopBlock() {
+        DispatchQueue.global(qos: .background).async {
+            withAnimation {
+                self.blockOffset += 1
+            }
+        }
     }
 }
 

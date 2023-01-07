@@ -37,6 +37,7 @@ struct GameView: View {
                     block in
                     BlockView(block: block)
                 }
+                MovingBlockView()
             }
         )
     }

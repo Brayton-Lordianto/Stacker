@@ -18,6 +18,7 @@
 		4129BEB62967BE02009982A5 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB52967BE02009982A5 /* Block.swift */; };
 		4129BEB82967C76F009982A5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB72967C76F009982A5 /* Coordinate.swift */; };
 		4129BEBA2967CE59009982A5 /* BlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEB92967CE59009982A5 /* BlockView.swift */; };
+		4129BEBC2968F9F9009982A5 /* MovingBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4129BEBB2968F9F9009982A5 /* MovingBlockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4129BEB52967BE02009982A5 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		4129BEB72967C76F009982A5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		4129BEB92967CE59009982A5 /* BlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockView.swift; sourceTree = "<group>"; };
+		4129BEBB2968F9F9009982A5 /* MovingBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingBlockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				4129BEAE2967B4F8009982A5 /* SingleSquare.swift */,
 				4129BEB92967CE59009982A5 /* BlockView.swift */,
+				4129BEBB2968F9F9009982A5 /* MovingBlockView.swift */,
 			);
 			path = GameComponents;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				4129BE9C2967B33B009982A5 /* ContentView.swift in Sources */,
 				4129BEAC2967B38F009982A5 /* GameView.swift in Sources */,
 				4129BEB62967BE02009982A5 /* Block.swift in Sources */,
+				4129BEBC2968F9F9009982A5 /* MovingBlockView.swift in Sources */,
 				4129BEB32967BA76009982A5 /* GameViewModel.swift in Sources */,
 				4129BE9A2967B33B009982A5 /* Stacker1App.swift in Sources */,
 			);
