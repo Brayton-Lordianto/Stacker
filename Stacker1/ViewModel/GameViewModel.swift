@@ -17,8 +17,13 @@ class GameViewModel: ObservableObject {
     var prevCoordinateValue = 10
     
     // for the moving block
+    private let SPEED_UNIT: CGFloat = 3
     @Published var blockDirection: MoveDirection = .horizontal
     @Published var blockOffset: CGFloat = 0
+    private var currBlockSize = 0
+    private var offsetFactor: CGFloat = 1
+    private var offsetSpeed: CGFloat = 1
+    private var offsetLimit: CGFloat = 0 // .5 blockWidth + offsetLimit + .5 blockWidth => means reverse direction
     private var offsetTimer = Timer()
     
     init() {
@@ -32,21 +37,24 @@ extension GameViewModel {
     
     func addBlock(
     ) {
-        // figure out which block to give
-        var block = exampleBlock
-        block.coordinate = Coordinate(coordinateValue: prevCoordinateValue + 10)
-        blocks = blocks + [block]
-        
-        // update for next block
-        prevCoordinateValue += 10
-        blockDirection = blockDirection == .horizontal ? .vertical : .horizontal
-        blockOffset = 0
+            // figure out which block to give
+            var block = exampleBlock
+            block.coordinate = Coordinate(coordinateValue: self.prevCoordinateValue + 10)
+            self.blocks = self.blocks + [block]
+            
+            // update for next block
+            self.prevCoordinateValue += 10
+            self.blockDirection = self.blockDirection == .horizontal ? .vertical : .horizontal
+            self.blockOffset = 0
     }
     
     @objc func moveTopBlock() {
         DispatchQueue.global(qos: .background).async {
             withAnimation {
-                self.blockOffset += 1
+                self.blockOffset += self.offsetFactor * self.offsetSpeed * self.SPEED_UNIT
+            }
+            if self.blockOffset > self.prevSize.width + self.offsetLimit {
+                self.offsetFactor *= -1
             }
         }
     }

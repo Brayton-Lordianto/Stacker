@@ -14,15 +14,11 @@ struct GameViewContainter: View {
     var body: some View {
         PrismCanvas(tilt: defaultConfig.tilt) {
             GameView(config: defaultConfig)
+                .environmentObject(gameVM)
         }
         .onLongPressGesture(perform: {
             gameVM.blocks.removeAll()
         })
-        .onTapGesture {
-//            gameVM.blocks.removeAll()
-            gameVM.addBlock()
-//            gameVM.blocks.append(exampleBlock)
-        }
     }
 }
 
@@ -38,6 +34,9 @@ struct GameView: View {
                     BlockView(block: block)
                 }
                 MovingBlockView()
+            }
+                .onTapGesture {
+                    gameVM.addBlock()
             }
         )
     }
@@ -55,5 +54,6 @@ var defaultConfig: PrismConfiguration =
     .init(
         tilt: 0.5,
         size: .init(width: 250, height: 250),
-        extrusion: 50
+        extrusion: 50,
+        levitation: 0
     )

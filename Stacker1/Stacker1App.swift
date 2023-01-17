@@ -11,7 +11,9 @@ import SwiftUI
 struct Stacker1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            GameViewContainter()
+                .environmentObject(GameViewModel())
         }
     }
 }

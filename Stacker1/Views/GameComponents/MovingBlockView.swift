@@ -11,6 +11,8 @@ import SwiftUI
 // the movement is only horizontal or vertical
 struct MovingBlockView: View {
     @EnvironmentObject var gameVM: GameViewModel
+    private let xFix: CGFloat = -25
+    private let yFix: CGFloat = -35
     var xOffset: CGFloat {
         guard gameVM.blockDirection == .vertical else {return 0}
         return gameVM.blockOffset
@@ -22,7 +24,8 @@ struct MovingBlockView: View {
     
     var body: some View {
         BlockView(block: exampleBlock)
-            .offset(x: xOffset, y: yOffset)
+            .offset(x: xOffset + xFix, y: yOffset + yFix)
+            // for testing purposes.
             .overlay {
                 Text(max(xOffset, yOffset).description)
             }
